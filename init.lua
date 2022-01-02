@@ -1,0 +1,6 @@
+require('defaults')
+require('plugins')
+require('coc-config')
+require('telescope-config')
+require('which-key-config')
+require('barbar-config')
