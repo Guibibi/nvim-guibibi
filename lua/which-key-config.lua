@@ -16,5 +16,6 @@ wk.register({
   ["<leader>."] = { name = "Code action"},
   ["<leader>f"] = { name = "Prettier format"},
   ["<leader>l"] = { name = "Eslint fix"},
-  ["<leader>n"] = { Name = "File browser"},
+  ["<leader>n"] = { name = "File browser"},
+  ["<leader>S"] = { "<cmd>cd %:p:h<CR>", "Scope folder to current file"}
 })

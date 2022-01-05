@@ -41,6 +41,9 @@ require('packer').startup(function(use)
   use 'windwp/nvim-autopairs' -- Autopairs tags
   use 'folke/which-key.nvim' -- Show keybindings
   use 'romgrk/barbar.nvim' -- Tabline plugin
+  use 'catppuccin/nvim' -- Another theme
+  use 'feline-nvim/feline.nvim' -- Bottom info bar
+  use 'lewis6991/gitsigns.nvim' -- Gitsigns
 end)
 
 require('nvim-treesitter.configs').setup {
@@ -71,3 +74,9 @@ require('trouble').setup()
 require('neoscroll').setup()
 -- Nvim-autopairs setup
 require('nvim-autopairs').setup()
+-- Feline setup
+require('feline').setup({
+  components = require('catppuccin.core.integrations.feline'),
+})
+-- Gitsigns setup
+require('gitsigns').setup()
