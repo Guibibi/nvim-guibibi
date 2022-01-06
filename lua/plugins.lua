@@ -31,8 +31,7 @@ require('packer').startup(function(use)
   use {'kyazdani42/nvim-web-devicons'} -- Icons
   use 'ggandor/lightspeed.nvim' -- Faster movement in code
   use 'norcalli/nvim-colorizer.lua' -- Hex colorizer
-  use 'folke/trouble.nvim' -- Code problem window
-  use 'ms-jpq/chadtree' -- File browser
+  -- use 'folke/trouble.nvim' -- Code problem window
   use 'rmagatti/auto-session' -- Auto session manager
   use 'karb94/neoscroll.nvim' -- Smooth scrolling
   use 'ludovicchabant/vim-gutentags' -- Automatic tags management
@@ -44,6 +43,7 @@ require('packer').startup(function(use)
   use 'catppuccin/nvim' -- Another theme
   use 'feline-nvim/feline.nvim' -- Bottom info bar
   use 'lewis6991/gitsigns.nvim' -- Gitsigns
+  use 'kyazdani42/nvim-tree.lua' -- Tree file manager
 end)
 
 require('nvim-treesitter.configs').setup {
@@ -57,19 +57,15 @@ local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
 
--- CHADTree setup
-map('n', '<leader>n', ':CHADopen<CR>', opts)
 -- Trouble setup
-require('trouble').setup()
-map('n', '<leader>t', ':TroubleToggle<CR>', opts)
+-- require('trouble').setup()
+-- map('n', '<leader>t', ':TroubleToggle<CR>', opts)
 
 --nvim-colorizer setup
 require'colorizer'.setup()
 
 --which-key setup
 require('which-key').setup()
---trouble setup
-require('trouble').setup()
 -- Neoscroll setup
 require('neoscroll').setup()
 -- Nvim-autopairs setup
@@ -80,3 +76,5 @@ require('feline').setup({
 })
 -- Gitsigns setup
 require('gitsigns').setup()
+-- Nvim-tree setup
+require('nvim-tree').setup()
