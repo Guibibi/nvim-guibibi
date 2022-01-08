@@ -1,23 +1,14 @@
--- Incremental live completition
-vim.o.inccommand = 'nosplit'
-
--- Show lines number
-vim.wo.number = true
-
--- Set highlight on search
-vim.o.hlsearch = false
-
--- Do not save when switching buffers
-vim.o.hidden = true
-
--- Enable mouse mode
-vim.o.mouse = 'a'
-
---Enable break indent
-vim.o.breakindent = true
-
---Save undo history
-vim.opt.undofile = true
+vim.o.inccommand = 'nosplit' -- Incremental live completition
+vim.wo.number = true -- Show lines number
+vim.o.hlsearch = false -- Set highlight on search
+vim.o.hidden = true -- Do not save when switching buffers
+vim.o.mouse = 'a' -- Enable mouse mode
+vim.o.breakindent = true --Enable break indent
+vim.opt.undofile = true --Save undo history
+vim.opt.clipboard = "unnamedplus" -- Allow neovim to access the system clipboard.
+vim.opt.cmdheight = 2
+vim.opt.fileencoding = "utf-8"
+vim.opt.wrap = false -- Don't wrap text
 
 -- Set to tabs with a width of 2
 vim.o.smartindent = true
@@ -25,34 +16,31 @@ vim.o.tabstop = 2
 vim.o.expandtab = true
 vim.o.shiftwidth = 2
 
---Case insensitive searching UNLESS /C or capital in search
-vim.o.ignorecase = true
+vim.o.ignorecase = true --Case insensitive searching UNLESS /C or capital in search
 vim.o.smartcase = true
 
---Decrease update time
-vim.o.updatetime = 250
+vim.o.updatetime = 250 --Decrease update time
 vim.wo.signcolumn = 'yes'
 
 --Set colorscheme (order is important here)
 vim.o.termguicolors = true
 vim.cmd [[colorscheme catppuccin]]
 
---Remap space as leader key
-vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+-- Shorten function name
+local keymap = vim.api.nvim_set_keymap
 
 opts = { noremap = true, silent = true}
 
---Remap for dealing with word wrap
-vim.api.nvim_set_keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
-vim.api.nvim_set_keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
+--Remap space as leader key
+keymap('', '<Space>', '<Nop>', opts)
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 --Remap for windows navigation
-vim.api.nvim_set_keymap('n', '<C-Left>', "<C-w>h", opts)
-vim.api.nvim_set_keymap('n', '<C-Right>', "<C-w>l", opts)
-vim.api.nvim_set_keymap('n', '<C-Up>', "<C-w>k", opts)
-vim.api.nvim_set_keymap('n', '<C-Down>', "<C-w>j", opts)
+keymap('n', '<C-Left>', "<C-w>h", opts)
+keymap('n', '<C-Right>', "<C-w>l", opts)
+keymap('n', '<C-Up>', "<C-w>k", opts)
+keymap('n', '<C-Down>', "<C-w>j", opts)
 
 -- Highlight on yank
 vim.api.nvim_exec(
@@ -65,8 +53,9 @@ vim.api.nvim_exec(
   false
 )
 
+
 -- Y yank until the end of line  (note: this is now a default on master)
-vim.api.nvim_set_keymap('n', 'Y', 'y$', { noremap = true })
+keymap('n', 'Y', 'y$', { noremap = true })
 
 --Map blankline
 vim.g.indent_blankline_char = '┊'
@@ -74,3 +63,21 @@ vim.g.indent_blankline_filetype_exclude = { 'help', 'packer' }
 vim.g.indent_blankline_buftype_exclude = { 'terminal', 'nofile' }
 vim.g.indent_blankline_char_highlight = 'LineNr'
 vim.g.indent_blankline_show_trailing_blankline_indent = false
+
+-- Visual
+-- Move text up and down
+keymap("v", "<A-j>", ":m .+1<CR>==", opts)
+keymap("v", "<A-k>", ":m .-2<CR>==", opts)
+keymap("v", "p", '"_dP', opts)
+
+-- Stay in indent mode
+keymap("v", "<", "<gv", opts)
+keymap("v", ">", ">gv", opts)
+
+-- Visual Block --
+-- Move text up and down
+keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
+keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+
