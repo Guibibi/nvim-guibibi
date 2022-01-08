@@ -12,12 +12,27 @@ vim.api.nvim_exec(
   [[
   augroup Packer
     autocmd!
-    autocmd BufWritePost init.lua PackerCompile
+    autocmd BufWritePost plugins.lua PackerSync
   augroup end
 ]],
   false
 )
 vim.cmd [[packadd packer.nvim]]
+
+-- Use a protected call so we don't error out on first use
+local status_ok, packer = pcall(require, "packer")
+if not status_ok then
+  return
+end
+
+-- Have packer use a popup window
+packer.init {
+  display = {
+    open_fn = function()
+      return require("packer.util").float { border = "rounded" }
+    end,
+  },
+}
 
 require('packer').startup(function(use)
   use 'wbthomason/packer.nvim' -- Package manager
@@ -44,6 +59,7 @@ require('packer').startup(function(use)
   use 'feline-nvim/feline.nvim' -- Bottom info bar
   use 'lewis6991/gitsigns.nvim' -- Gitsigns
   use 'kyazdani42/nvim-tree.lua' -- Tree file manager
+  use 'https://git.sr.ht/~whynothugo/lsp_lines.nvim' -- Show errors in a virtual lines
 end)
 
 require('nvim-treesitter.configs').setup {
