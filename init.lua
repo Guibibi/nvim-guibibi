@@ -22,8 +22,9 @@ vim.cmd [[packadd packer.nvim]]
 
 require('defaults')
 require('plugins')
-require('coc-config')
+-- require('coc-config')
 require('telescope-config')
 require('which-key-config')
 require('barbar-config')
 require('vim-gutentags')
+require('lsps')

@@ -38,7 +38,7 @@ require('packer').startup(function(use)
   use 'wbthomason/packer.nvim' -- Package manager
   use 'arcticicestudio/nord-vim' -- Theme
   use 'nvim-treesitter/nvim-treesitter' -- Syntax highlighthing
-  use {'neoclide/coc.nvim', branch = 'master', run = 'yarn install --frozen-lockfile'} -- LSP's and autocompletion (IDE Experience)
+  -- use {'neoclide/coc.nvim', branch = 'master', run = 'yarn install --frozen-lockfile'} -- LSP's and autocompletion (IDE Experience)
   use {'nvim-telescope/telescope.nvim', -- Search plugin
     requires = { {'nvim-lua/plenary.nvim'} }
   }
@@ -46,7 +46,7 @@ require('packer').startup(function(use)
   use {'kyazdani42/nvim-web-devicons'} -- Icons
   use 'ggandor/lightspeed.nvim' -- Faster movement in code
   use 'norcalli/nvim-colorizer.lua' -- Hex colorizer
-  -- use 'folke/trouble.nvim' -- Code problem window
+  use 'folke/trouble.nvim' -- Code problem window
   use 'rmagatti/auto-session' -- Auto session manager
   use 'karb94/neoscroll.nvim' -- Smooth scrolling
   use 'ludovicchabant/vim-gutentags' -- Automatic tags management
@@ -60,7 +60,16 @@ require('packer').startup(function(use)
   use 'lewis6991/gitsigns.nvim' -- Gitsigns
   use 'kyazdani42/nvim-tree.lua' -- Tree file manager
   use 'https://git.sr.ht/~whynothugo/lsp_lines.nvim' -- Show errors in a virtual lines
+  use 'neovim/nvim-lspconfig' -- LSP's
+  use 'williamboman/nvim-lsp-installer' -- Easily install LSP's
+  use 'tami5/lspsaga.nvim' -- Provide better actions for LSP's
+  use 'folke/lsp-colors.nvim' -- Provide LSP's color to theme that don't support it
+  use {'ms-jpq/coq_nvim', branch = 'coq'} -- Autocompletion
+  use {'ms-jpq/coq.artifacts', branch='artifacts'} -- 9000 snippets
 end)
+
+-- vim.g.coq_settings = {'auto_start': 'shut_up'}
+vim.cmd("let g:coq_settings = {'auto_start' : 'shut-up'}")
 
 require('nvim-treesitter.configs').setup {
   ensure_installed = "maintained",
@@ -69,13 +78,8 @@ require('nvim-treesitter.configs').setup {
   }
 }
 
-local map = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
-
-
 -- Trouble setup
--- require('trouble').setup()
--- map('n', '<leader>t', ':TroubleToggle<CR>', opts)
+require('trouble').setup()
 
 --nvim-colorizer setup
 require'colorizer'.setup()
@@ -94,3 +98,5 @@ require('feline').setup({
 require('gitsigns').setup()
 -- Nvim-tree setup
 require('nvim-tree').setup()
+
+require('lspsaga').init_lsp_saga()
