@@ -66,6 +66,7 @@ require('packer').startup(function(use)
   use 'folke/lsp-colors.nvim' -- Provide LSP's color to theme that don't support it
   use {'ms-jpq/coq_nvim', branch = 'coq'} -- Autocompletion
   use {'ms-jpq/coq.artifacts', branch='artifacts'} -- 9000 snippets
+  use 'akinsho/toggleterm.nvim'
 end)
 
 -- vim.g.coq_settings = {'auto_start': 'shut_up'}
@@ -98,5 +99,10 @@ require('feline').setup({
 require('gitsigns').setup()
 -- Nvim-tree setup
 require('nvim-tree').setup()
-
+-- Lsp saga setup
 require('lspsaga').init_lsp_saga()
+-- ToggleTerm setup
+require('toggleterm').setup{
+  direction = 'float',
+  open_mapping = [[<c-\>]],
+}
