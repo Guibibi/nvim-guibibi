@@ -12,7 +12,7 @@ vim.api.nvim_exec(
   [[
   augroup Packer
     autocmd!
-    autocmd BufWritePost plugins.lua PackerSync
+    autocmd BufWritePost plugins.lua PackerInstall
   augroup end
 ]],
   false
@@ -66,7 +66,8 @@ require('packer').startup(function(use)
   use 'folke/lsp-colors.nvim' -- Provide LSP's color to theme that don't support it
   use {'ms-jpq/coq_nvim', branch = 'coq'} -- Autocompletion
   use {'ms-jpq/coq.artifacts', branch='artifacts'} -- 9000 snippets
-  use 'akinsho/toggleterm.nvim'
+  use 'akinsho/toggleterm.nvim' -- Open a float terminal
+  use 'p00f/nvim-ts-rainbow' -- Rainbow parentheses
 end)
 
 -- vim.g.coq_settings = {'auto_start': 'shut_up'}
@@ -76,6 +77,10 @@ require('nvim-treesitter.configs').setup {
   ensure_installed = "maintained",
   highlight = {
     enable = true,
+  },
+  rainbow = {
+    enable = true,
+    extended_mode = true,
   }
 }
 
