@@ -68,6 +68,7 @@ require('packer').startup(function(use)
   use {'ms-jpq/coq.artifacts', branch='artifacts'} -- 9000 snippets
   use 'akinsho/toggleterm.nvim' -- Open a float terminal
   use 'p00f/nvim-ts-rainbow' -- Rainbow parentheses
+  use 'lukas-reineke/indent-blankline.nvim' -- Indent guidelines
 end)
 
 -- vim.g.coq_settings = {'auto_start': 'shut_up'}
