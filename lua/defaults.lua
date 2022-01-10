@@ -37,10 +37,10 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 --Remap for windows navigation
-keymap('n', '<C-Left>', "<C-w>h", opts)
-keymap('n', '<C-Right>', "<C-w>l", opts)
-keymap('n', '<C-Up>', "<C-w>k", opts)
-keymap('n', '<C-Down>', "<C-w>j", opts)
+keymap('n', '<C-h>', "<C-w>h", opts)
+keymap('n', '<C-l>', "<C-w>l", opts)
+keymap('n', '<C-k>', "<C-w>k", opts)
+keymap('n', '<C-j>', "<C-w>j", opts)
 
 -- Highlight on yank
 vim.api.nvim_exec(
