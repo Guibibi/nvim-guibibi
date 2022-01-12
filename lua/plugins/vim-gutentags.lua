@@ -1,10 +1,11 @@
-return function()
   -- https://www.reddit.com/r/vim/comments/d77t6j/guide_how_to_setup_ctags_with_gutentags_properly/
   vim.g.gutentags_ctags_exclude = {
         '*.git', '*.svg', '*.hg',
         '*/tests/*',
         'build',
         'dist',
+        'ios',
+        'android',
         '*sites/*/files/*',
         'bin',
         'node_modules',
@@ -57,4 +58,3 @@ return function()
   vim.g.gutentags_generate_on_empty_buffer = true
   vim.cmd([[command! -nargs=0 GutentagsClearCache call system('rm ' . g:gutentags_cache_dir . '/*')]])
   vim.g.gutentags_ctags_extra_args = {'--tag-relative=yes', '--fields=+ailmnS', }
-end
