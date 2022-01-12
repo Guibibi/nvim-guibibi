@@ -13,6 +13,7 @@ wk.register({
 	["<leader>?"] = { name = "Old files" },
 	["<leader>sc"] = { name = "Colorschemes" },
 	["<leader><space>"] = { name = "Buffer search" },
+  ["<leader>p"] = {"<cmd>Telescope projects<CR>", "Project finder"},
 	["<leader>n"] = { "<cmd>NvimTreeToggle<CR>", "File browser" },
 	["<leader>S"] = { "<cmd>cd %:p:h<CR>", "Scope folder to current file" },
 	["<leader>g"] = { "<cmd>LazyGit<CR>", "LazyGit" },

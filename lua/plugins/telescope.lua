@@ -1,10 +1,10 @@
 -- Setup telescope
-
-require('telescope').setup()
+local telescope = require'telescope'
+telescope.setup()
 
 -- Setup telescope fzf
-require('telescope').load_extension('fzf')
-
+telescope.load_extension('fzf')
+telescope.load_extension('projects')
 
 vim.api.nvim_set_keymap('n', '<leader><space>', [[<cmd>lua require('telescope.builtin').buffers()<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>sf', [[<cmd>lua require('telescope.builtin').find_files()<CR>]], { noremap = true, silent = true })
