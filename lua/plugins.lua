@@ -72,7 +72,9 @@ require("packer").startup(function(use)
 	use("nacro90/numb.nvim") -- Peek when entering line number
 	use("lewis6991/impatient.nvim") -- Speed up load modules
 	use("ahmedkhalf/project.nvim") -- Project management
-  use('romgrk/nvim-treesitter-context') -- Show sticky function name
+	use("romgrk/nvim-treesitter-context") -- Show sticky function name
+	use("simrat39/symbols-outline.nvim") -- Show symbol outline with :SymbolsOutline
+	use("goolord/alpha-nvim") -- Startup dashboard
 
 	-- Colorschemes
 	use("EdenEast/nightfox.nvim") -- Another theme
@@ -151,6 +153,6 @@ require("toggleterm").setup({
 -- Numb setup
 require("numb").setup()
 -- Project setup
-require('project_nvim').setup()
+require("project_nvim").setup()
 -- treesitter-context setup
-require('treesitter-context').setup()
+require("treesitter-context").setup()
