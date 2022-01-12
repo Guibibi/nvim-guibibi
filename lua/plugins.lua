@@ -64,11 +64,30 @@ require('packer').startup(function(use)
   use 'williamboman/nvim-lsp-installer' -- Easily install LSP's
   use 'tami5/lspsaga.nvim' -- Provide better actions for LSP's
   use 'folke/lsp-colors.nvim' -- Provide LSP's color to theme that don't support it
-  use {'ms-jpq/coq_nvim', branch = 'coq'} -- Autocompletion
-  use {'ms-jpq/coq.artifacts', branch='artifacts'} -- 9000 snippets
   use 'akinsho/toggleterm.nvim' -- Open a float terminal
   use 'p00f/nvim-ts-rainbow' -- Rainbow parentheses
   use 'lukas-reineke/indent-blankline.nvim' -- Indent guidelines
+  use 'RishabhRD/popfix'
+  use 'RishabhRD/nvim-lsputils' -- Better LSP actions
+  use 'folke/tokyonight.nvim' -- Another  theme
+  use 'RRethy/vim-illuminate' -- Illuminate the same instance of words
+
+
+  -- cmp plugins
+  use "hrsh7th/nvim-cmp" -- The completion plugin
+  use "hrsh7th/cmp-buffer" -- buffer completions
+  use "hrsh7th/cmp-path" -- path completions
+  use "hrsh7th/cmp-cmdline" -- cmdline completions
+  use "saadparwaiz1/cmp_luasnip" -- snippet completions
+  use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-emoji"
+  use "hrsh7th/cmp-nvim-lua"
+
+
+   -- snippets
+  use "L3MON4D3/LuaSnip" --snippet engine
+  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+
 end)
 
 -- vim.g.coq_settings = {'auto_start': 'shut_up'}
@@ -112,3 +131,4 @@ require('toggleterm').setup{
   direction = 'float',
   open_mapping = [[<c-\>]],
 }
+
