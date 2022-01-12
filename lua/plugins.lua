@@ -75,6 +75,7 @@ require("packer").startup(function(use)
 	use("romgrk/nvim-treesitter-context") -- Show sticky function name
 	use("simrat39/symbols-outline.nvim") -- Show symbol outline with :SymbolsOutline
 	use("goolord/alpha-nvim") -- Startup dashboard
+  use("ellisonleao/glow.nvim") -- Markdown previewer
 
 	-- Colorschemes
 	use("EdenEast/nightfox.nvim") -- Another theme
@@ -101,9 +102,6 @@ require("packer").startup(function(use)
 	use("L3MON4D3/LuaSnip") --snippet engine
 	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
 end)
-
--- vim.g.coq_settings = {'auto_start': 'shut_up'}
-vim.cmd("let g:coq_settings = {'auto_start' : 'shut-up'}")
 
 require("nvim-treesitter.configs").setup({
 	ensure_installed = "maintained",
