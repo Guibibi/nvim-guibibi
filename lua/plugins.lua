@@ -72,6 +72,10 @@ require('packer').startup(function(use)
   use 'folke/tokyonight.nvim' -- Another  theme
   use 'RRethy/vim-illuminate' -- Illuminate the same instance of words
 
+  -- formatter plugins
+  use 'jose-elias-alvarez/null-ls.nvim' -- Formatter  plugin
+  use 'PlatyPew/format-installer.nvim' -- Formatter plugin installer
+
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
