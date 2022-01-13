@@ -1,6 +1,10 @@
 -- Setup telescope
 local telescope = require'telescope'
-telescope.setup()
+telescope.setup({
+  defaults = {
+    file_ignore_patterns = {"ios", "node_modules", "android", "*.test.js.snap"}
+  }
+})
 
 -- Setup telescope fzf
 telescope.load_extension('fzf')
