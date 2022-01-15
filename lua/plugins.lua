@@ -76,6 +76,8 @@ require("packer").startup(function(use)
 	use("simrat39/symbols-outline.nvim") -- Show symbol outline with :SymbolsOutline
 	use("goolord/alpha-nvim") -- Startup dashboard
   use("ellisonleao/glow.nvim") -- Markdown previewer
+  use("tpope/vim-surround") -- Surround operator
+  use "JoosepAlviste/nvim-ts-context-commentstring" -- Make comment work in Vue
 
 	-- Colorschemes
 	use("EdenEast/nightfox.nvim") -- Another theme
@@ -105,6 +107,9 @@ end)
 
 require("nvim-treesitter.configs").setup({
 	ensure_installed = "maintained",
+  context_commentstring = {
+    enable = true
+  },
 	highlight = {
 		enable = true,
 	},
