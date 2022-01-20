@@ -76,7 +76,9 @@ require("packer").startup(function(use)
 	use("simrat39/symbols-outline.nvim") -- Show symbol outline with :SymbolsOutline
 	use("goolord/alpha-nvim") -- Startup dashboard
   use("ellisonleao/glow.nvim") -- Markdown previewer
-
+  use("kkoomen/vim-doge") -- Documentation generator
+  use("vim-test/vim-test") -- Testing extension
+  use("pwntester/octo.nvim") -- Github pull request
 	-- Colorschemes
 	use("EdenEast/nightfox.nvim") -- Another theme
 	use("folke/tokyonight.nvim") -- Adother  theme
@@ -154,3 +156,5 @@ require("numb").setup()
 require("project_nvim").setup()
 -- treesitter-context setup
 require("treesitter-context").setup()
+-- Octo setup
+require("octo").setup()
