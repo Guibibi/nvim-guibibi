@@ -3,7 +3,7 @@ local wk = require("which-key")
 wk.register({
 	--Telescope
 	["<leader>s"] = { name = "+search" },
-	["<leader>sf"] = { name = "Files" },
+	["<leader>o"] = { name = "Open buffer" },
 	["<leader>sb"] = { name = "Fuzzy find current buffer" },
 	["<leader>sh"] = { name = "Help tags" },
 	["<leader>st"] = { name = "Tags" },
@@ -12,7 +12,7 @@ wk.register({
 	["<leader>so"] = { name = "Buffer tags" },
 	["<leader>?"] = { name = "Old files" },
 	["<leader>sc"] = { name = "Colorschemes" },
-	["<leader><space>"] = { name = "Buffer search" },
+	["<leader><space>"] = { name = "Find file" },
 	["<leader>p"] = { "<cmd>Telescope projects<CR>", "Project finder" },
 	["<leader>ss"] = { "<cmd>Telescope lsp_document_symbols<CR>", "Document symbols" },
 	["<leader>sS"] = { "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>", "Workspace symbols" },

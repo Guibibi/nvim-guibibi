@@ -80,13 +80,16 @@ require("packer").startup(function(use)
 	use("vim-test/vim-test") -- Testing extension
 	use("pwntester/octo.nvim") -- Github pull request
 	use("tpope/vim-surround") -- Surround operator
-	use "JoosepAlviste/nvim-ts-context-commentstring" -- Make comment work in Vue
-
+	use ("JoosepAlviste/nvim-ts-context-commentstring") -- Make comment work in Vue
+  -- use ("github/copilot.vim") -- Github copilot
+  use('zbirenbaum/copilot.lua') -- Better Github copilot
+  use ("danymat/neogen","danymat/neogen") -- Documentation generator
 	-- Colorschemes
 	use("EdenEast/nightfox.nvim") -- Another theme
 	use("folke/tokyonight.nvim") -- Adother  theme
 	use("catppuccin/nvim") -- Another theme
 	use("arcticicestudio/nord-vim") -- Theme
+  use("nvim-neorg/neorg") -- Org mode
 
 	-- formatter plugins
 	use("jose-elias-alvarez/null-ls.nvim") -- Formatter  plugin
@@ -102,6 +105,7 @@ require("packer").startup(function(use)
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-emoji")
 	use("hrsh7th/cmp-nvim-lua")
+  use("zbirenbaum/copilot-cmp")
 
 	-- snippets
 	use("L3MON4D3/LuaSnip") --snippet engine
@@ -164,3 +168,12 @@ require("project_nvim").setup()
 require("treesitter-context").setup()
 -- Octo setup
 require("octo").setup()
+-- Neogen setup
+require('neogen').setup{
+  enabled = true
+}
+require('neorg').setup {
+    load = {
+        ["core.defaults"] = {}
+    }
+}
