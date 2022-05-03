@@ -9,8 +9,9 @@ vim.opt.clipboard = "unnamedplus" -- Allow neovim to access the system clipboard
 vim.opt.cmdheight = 2
 vim.opt.fileencoding = "utf-8"
 vim.opt.wrap = false -- Don't wrap text
-vim.o.guifont = "FiraCode Nerd Font:h17"
-vim.g.neovide_fullscreen = true
+vim.o.guifont = "FiraCode Nerd Font:h15"
+-- vim.g.neovide_fullscreen = true // This will crash neovide lol
+vim.g.neovide_input_use_logo= true
 -- Set to tabs with a width of 2
 vim.o.smartindent = true
 vim.o.tabstop = 2
