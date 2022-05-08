@@ -35,6 +35,7 @@ packer.init({
 })
 
 require("packer").startup(function(use)
+	use("lewis6991/impatient.nvim") -- Startup time goes BRRRR
 	use("wbthomason/packer.nvim") -- Package manager
 	use("nvim-treesitter/nvim-treesitter") -- Syntax highlighthing
 	use({
@@ -46,7 +47,7 @@ require("packer").startup(function(use)
 	use("ggandor/lightspeed.nvim") -- Faster movement in code
 	use("norcalli/nvim-colorizer.lua") -- Hex colorizer
 	use("folke/trouble.nvim") -- Code problem window
-	use("rmagatti/auto-session") -- Auto session manager
+	-- use("rmagatti/auto-session") -- Auto session manager
 	use("karb94/neoscroll.nvim") -- Smooth scrolling
 	use("ludovicchabant/vim-gutentags") -- Automatic tags management
 	use("tpope/vim-commentary") -- "gc" to comment visual regions/lines
@@ -70,7 +71,6 @@ require("packer").startup(function(use)
 	use("RRethy/vim-illuminate") -- Illuminate the same instance of words
 	use("andymass/vim-matchup") -- Better % operator
 	use("nacro90/numb.nvim") -- Peek when entering line number
-	use("lewis6991/impatient.nvim") -- Speed up load modules
 	use("ahmedkhalf/project.nvim") -- Project management
 	use("romgrk/nvim-treesitter-context") -- Show sticky function name
 	use("simrat39/symbols-outline.nvim") -- Show symbol outline with :SymbolsOutline
@@ -80,21 +80,23 @@ require("packer").startup(function(use)
 	use("vim-test/vim-test") -- Testing extension
 	use("pwntester/octo.nvim") -- Github pull request
 	use("tpope/vim-surround") -- Surround operator
-	use ("JoosepAlviste/nvim-ts-context-commentstring") -- Make comment work in Vue
-  -- use ("github/copilot.vim") -- Github copilot
-  use('zbirenbaum/copilot.lua') -- Better Github copilot
-  use ("danymat/neogen","danymat/neogen") -- Documentation generator
+	use("JoosepAlviste/nvim-ts-context-commentstring") -- Make comment work in Vue
+	-- use ("github/copilot.vim") -- Github copilot
+	use("zbirenbaum/copilot.lua") -- Better Github copilot
+	use("danymat/neogen", "danymat/neogen") -- Documentation generator
+	-- use("rcarriga/nvim-notify") -- Notification module
+	use("gelguy/wilder.nvim") -- Provide completion for command line.
+	use("folke/lsp-colors.nvim") -- Provide LSP's color to theme that don't support it
+
 	-- Colorschemes
 	use("EdenEast/nightfox.nvim") -- Another theme
 	use("folke/tokyonight.nvim") -- Adother  theme
 	use("catppuccin/nvim") -- Another theme
 	use("arcticicestudio/nord-vim") -- Theme
-  use("nvim-neorg/neorg") -- Org mode
 
 	-- formatter plugins
 	use("jose-elias-alvarez/null-ls.nvim") -- Formatter  plugin
 	use("PlatyPew/format-installer.nvim") -- Formatter plugin installer
-	use("folke/lsp-colors.nvim") -- Provide LSP's color to theme that don't support it
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
@@ -105,18 +107,20 @@ require("packer").startup(function(use)
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-emoji")
 	use("hrsh7th/cmp-nvim-lua")
-  use("zbirenbaum/copilot-cmp")
+	use("zbirenbaum/copilot-cmp")
 
 	-- snippets
 	use("L3MON4D3/LuaSnip") --snippet engine
 	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
 end)
 
+require("impatient")
+
 require("nvim-treesitter.configs").setup({
-	ensure_installed = "maintained",
-  context_commentstring = {
-    enable = true
-  },
+	ensure_installed = "all",
+	context_commentstring = {
+		enable = true,
+	},
 	highlight = {
 		enable = true,
 	},
@@ -169,11 +173,17 @@ require("treesitter-context").setup()
 -- Octo setup
 require("octo").setup()
 -- Neogen setup
-require('neogen').setup{
-  enabled = true
-}
-require('neorg').setup {
-    load = {
-        ["core.defaults"] = {}
-    }
-}
+require("neogen").setup({
+	enabled = true,
+})
+-- Wilder setup
+local wilder = require("wilder")
+wilder.setup({ modes = { ":" } })
+wilder.set_option(
+	"renderer",
+	wilder.popupmenu_renderer({
+		highlighter = wilder.basic_highlighter(),
+		left = { " ", wilder.popupmenu_devicons() },
+		right = { " ", wilder.popupmenu_scrollbar() },
+	})
+)
