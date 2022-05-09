@@ -51,11 +51,11 @@ require("packer").startup(function(use)
 	use("karb94/neoscroll.nvim") -- Smooth scrolling
 	use("ludovicchabant/vim-gutentags") -- Automatic tags management
 	use("tpope/vim-commentary") -- "gc" to comment visual regions/lines
-	use("kdheepak/lazygit.nvim") -- Git UI
+	use({"kdheepak/lazygit.nvim", branch="main"}) -- Git UI
 	use("windwp/nvim-autopairs") -- Autopairs tags
 	use("folke/which-key.nvim") -- Show keybindings
 	use("romgrk/barbar.nvim") -- Tabline plugin
-	use("feline-nvim/feline.nvim") -- Bottom info bar
+	use({"feline-nvim/feline.nvim", branch ='main'}) -- Bottom info bar
 	use("lewis6991/gitsigns.nvim") -- Gitsigns
 	use("kyazdani42/nvim-tree.lua") -- Tree file manager
 	use("https://git.sr.ht/~whynothugo/lsp_lines.nvim") -- Show errors in a virtual lines
@@ -63,7 +63,7 @@ require("packer").startup(function(use)
 	use("williamboman/nvim-lsp-installer") -- Easily install LSP's
 	use("tami5/lspsaga.nvim") -- Provide better actions for LSP's
 	use("tversteeg/registers.nvim") -- Better registers experience
-	use("akinsho/toggleterm.nvim") -- Open a float terminal
+	use({"akinsho/toggleterm.nvim", branch="main"}) -- Open a float terminal
 	use("p00f/nvim-ts-rainbow") -- Rainbow parentheses
 	use("lukas-reineke/indent-blankline.nvim") -- Indent guidelines
 	use("RishabhRD/popfix")
@@ -78,7 +78,7 @@ require("packer").startup(function(use)
 	use("ellisonleao/glow.nvim") -- Markdown previewer
 	use("kkoomen/vim-doge") -- Documentation generator
 	use("vim-test/vim-test") -- Testing extension
-	use("pwntester/octo.nvim") -- Github pull request
+	use("ldelossa/gh.nvim") -- Github pull request
 	use("tpope/vim-surround") -- Surround operator
 	use("JoosepAlviste/nvim-ts-context-commentstring") -- Make comment work in Vue
 	-- use ("github/copilot.vim") -- Github copilot
@@ -170,8 +170,6 @@ require("numb").setup()
 require("project_nvim").setup()
 -- treesitter-context setup
 require("treesitter-context").setup()
--- Octo setup
-require("octo").setup()
 -- Neogen setup
 require("neogen").setup({
 	enabled = true,
