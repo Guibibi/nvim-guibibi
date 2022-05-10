@@ -79,6 +79,7 @@ require("packer").startup(function(use)
 	use("kkoomen/vim-doge") -- Documentation generator
 	use("vim-test/vim-test") -- Testing extension
 	use("ldelossa/gh.nvim") -- Github pull request
+  use("ldelossa/litee.nvim") -- Framework for UIs (Used by gh.nvim)
 	use("tpope/vim-surround") -- Surround operator
 	use("JoosepAlviste/nvim-ts-context-commentstring") -- Make comment work in Vue
 	-- use ("github/copilot.vim") -- Github copilot
@@ -185,3 +186,5 @@ wilder.set_option(
 		right = { " ", wilder.popupmenu_scrollbar() },
 	})
 )
+require('litee.lib').setup()
+require('litee.gh').setup()
