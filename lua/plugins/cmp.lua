@@ -16,11 +16,19 @@ local check_backspace = function()
   return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
 end
 
+local lspkind = require('lspkind')
+
 cmp.setup({
   snippet = {
     expand = function(args)
       require('luasnip').lsp_expand(args.body)
     end,
+  },
+  formatting = {
+    format = lspkind.cmp_format({
+      mode = 'symbol',
+      maxwidth = 50,
+    })
   },
   mapping = {
     ["<C-k>"] = cmp.mapping.select_prev_item(),
@@ -73,5 +81,6 @@ cmp.setup({
     { name = 'path'},
     { name = 'emoji'},
     { name = 'copilot'},
+    { name = 'orgmode'},
   })
 })

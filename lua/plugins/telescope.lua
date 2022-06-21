@@ -9,6 +9,7 @@ telescope.setup({
 -- Setup telescope fzf
 telescope.load_extension('fzf')
 telescope.load_extension('projects')
+telescope.load_extension('cder')
 
 vim.api.nvim_set_keymap('n', '<leader>sb', [[<cmd>lua require('telescope.builtin').buffers()<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader><space>', [[<cmd>lua require('telescope.builtin').find_files()<CR>]], { noremap = true, silent = true })

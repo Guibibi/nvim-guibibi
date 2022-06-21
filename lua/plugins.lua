@@ -55,7 +55,7 @@ require("packer").startup(function(use)
 	use("windwp/nvim-autopairs") -- Autopairs tags
 	use("folke/which-key.nvim") -- Show keybindings
 	use("romgrk/barbar.nvim") -- Tabline plugin
-	use({"feline-nvim/feline.nvim", branch ='main'}) -- Bottom info bar
+  use ("nvim-lualine/lualine.nvim") -- Status line
 	use("lewis6991/gitsigns.nvim") -- Gitsigns
 	use("kyazdani42/nvim-tree.lua") -- Tree file manager
 	use("https://git.sr.ht/~whynothugo/lsp_lines.nvim") -- Show errors in a virtual lines
@@ -85,10 +85,20 @@ require("packer").startup(function(use)
 	-- use ("github/copilot.vim") -- Github copilot
 	use("zbirenbaum/copilot.lua") -- Better Github copilot
 	use("danymat/neogen", "danymat/neogen") -- Documentation generator
-	-- use("rcarriga/nvim-notify") -- Notification module
+	use("rcarriga/nvim-notify") -- Notification module
 	use("gelguy/wilder.nvim") -- Provide completion for command line.
 	use("folke/lsp-colors.nvim") -- Provide LSP's color to theme that don't support it
+  use("onsails/lspkind.nvim") -- Add icon to completion popup.
+  use("petertriho/nvim-scrollbar") -- Add scrollbar
+  use('zane-/cder.nvim') -- Telescope extension to CD into other folder
+  use('lewis6991/satellite.nvim') -- Better scrollbar
+  use { 'anuvyklack/hydra.nvim',
+    requires = 'anuvyklack/keymap-layer.nvim' -- needed only for pink hydras
+}
 
+  -- Org mode plugins
+  use('nvim-orgmode/orgmode') -- Add orgmode to neovim.
+  use('akinsho/org-bullets.nvim') -- Add better styling to org.
 	-- Colorschemes
 	use("EdenEast/nightfox.nvim") -- Another theme
 	use("folke/tokyonight.nvim") -- Adother  theme
@@ -117,6 +127,9 @@ end)
 
 require("impatient")
 
+-- Treesitter setup
+-- Setup org mode ts grammar
+require('orgmode').setup_ts_grammar()
 require("nvim-treesitter.configs").setup({
 	ensure_installed = "all",
 	context_commentstring = {
@@ -124,6 +137,8 @@ require("nvim-treesitter.configs").setup({
 	},
 	highlight = {
 		enable = true,
+    disable = {'org'}, -- Remov this to use TS highlighter (experimental)
+    additional_vim_regex_highlighting = {'org'}
 	},
 	rainbow = {
 		enable = true,
@@ -143,9 +158,11 @@ require("which-key").setup()
 require("neoscroll").setup()
 -- Nvim-autopairs setup
 require("nvim-autopairs").setup()
--- Feline setup
-require("feline").setup({
-	components = require("catppuccin.core.integrations.feline"),
+-- Lualine setup
+require("lualine").setup({
+  options = {
+    globalstatus = true,
+  }
 })
 -- Gitsigns setup
 require("gitsigns").setup()
@@ -175,6 +192,8 @@ require("treesitter-context").setup()
 require("neogen").setup({
 	enabled = true,
 })
+-- Copilot setup
+require("copilot").setup()
 -- Wilder setup
 local wilder = require("wilder")
 wilder.setup({ modes = { ":" } })
@@ -186,5 +205,21 @@ wilder.set_option(
 		right = { " ", wilder.popupmenu_scrollbar() },
 	})
 )
+-- Litee ui setup
 require('litee.lib').setup()
+-- Litee github PR setup
 require('litee.gh').setup()
+--Nvim-scrollbar setup
+require('scrollbar').setup()
+
+-- Org mode setup
+require('orgmode').setup({
+  org_agenda_files = '~/org/*',
+  org_default_notes_files = '~/org/*',
+})
+
+-- Org bullet setup
+require('org-bullets').setup()
+
+-- Satellite setup
+require('satellite').setup()

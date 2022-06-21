@@ -16,7 +16,13 @@ wk.register({
 		["<space>"] = { " Find File" },
 		["p"] = { "<cmd>Telescope projects<CR>", "Project Finder" },
 		["S"] = { "<cmd>cd %:p:h<CR>", "Scope Folder " },
-		["f"] = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format file" },
+    f = {
+      name = "File action",
+      f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format file" },
+      w = { "<cmd>set wrap!<CR>", "Toggle word wrap" },
+    },
+		["ff"] = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format file" },
+		["fw"] = { "<cmd>set wrap!<CR>", "Toggle word wrap" },
 		["O"] = { "<cmd>SymbolsOutline<CR>", "Show Symbols" },
 		o = {
 			name = "Open",
