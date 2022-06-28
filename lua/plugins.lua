@@ -82,8 +82,6 @@ require("packer").startup(function(use)
   use("ldelossa/litee.nvim") -- Framework for UIs (Used by gh.nvim)
 	use("tpope/vim-surround") -- Surround operator
 	use("JoosepAlviste/nvim-ts-context-commentstring") -- Make comment work in Vue
-	-- use ("github/copilot.vim") -- Github copilot
-	use("zbirenbaum/copilot.lua") -- Better Github copilot
 	use("danymat/neogen", "danymat/neogen") -- Documentation generator
 	use("rcarriga/nvim-notify") -- Notification module
 	use("gelguy/wilder.nvim") -- Provide completion for command line.
@@ -118,7 +116,6 @@ require("packer").startup(function(use)
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-emoji")
 	use("hrsh7th/cmp-nvim-lua")
-	use("zbirenbaum/copilot-cmp")
 
 	-- snippets
 	use("L3MON4D3/LuaSnip") --snippet engine
@@ -167,8 +164,8 @@ require("lualine").setup({
 -- Gitsigns setup
 require("gitsigns").setup()
 -- Nvim-tree setup
-vim.g.nvim_tree_respect_buf_cwd = 1
 require("nvim-tree").setup({
+  respect_buf_cwd = true,
 	update_cwd = true,
 	update_focused_file = {
 		enable = true,
@@ -192,8 +189,6 @@ require("treesitter-context").setup()
 require("neogen").setup({
 	enabled = true,
 })
--- Copilot setup
-require("copilot").setup()
 -- Wilder setup
 local wilder = require("wilder")
 wilder.setup({ modes = { ":" } })
