@@ -8,26 +8,22 @@ wk.register({
 	["gD"] = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Show Declaration" },
 	["gd"] = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Show Definition" },
 	["gi"] = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Show Implementation" },
-	["D"] = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "Type Definition" },
 	["gr"] = { "<cmd>lua vim.lsp.buf.references()<CR>", "Show References" },
 	["<leader>"] = {
 		["g"] = { "<cmd>LazyGit<CR>", "LazyGit" },
 		["?"] = { "Old Files" },
 		["<space>"] = { " Find File" },
 		["p"] = { "<cmd>Telescope projects<CR>", "Project Finder" },
-		["S"] = { "<cmd>cd %:p:h<CR>", "Scope Folder " },
     f = {
       name = "File action",
       f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format file" },
       w = { "<cmd>set wrap!<CR>", "Toggle word wrap" },
     },
-		["ff"] = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format file" },
-		["fw"] = { "<cmd>set wrap!<CR>", "Toggle word wrap" },
-		["O"] = { "<cmd>SymbolsOutline<CR>", "Show Symbols" },
 		o = {
 			name = "Open",
 			p = { "<cmd>NvimTreeToggle<CR>", "File browser" },
 			t = { "<cmd>TroubleToggle<cr>", "Diagnostics Window" },
+      o = { "<cmd>SymbolsOutline<CR>", "Show Symbols" },
 		},
 		s = {
 			name = "Search",
@@ -48,6 +44,7 @@ wk.register({
 			l = { "<cmd>BufferNext<CR>", "Next Buffer" },
 			b = { "<cmd>BufferPick<CR>", "Pick Buffer" },
 			c = { "<cmd>BufferCloseAllButCurrent<CR>", "Close Other Buffers" },
+      x = { "<cmd>BufferClose!<CR>", "Force kill buffer"},
 		},
 		c = {
 			name = "Code",
