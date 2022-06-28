@@ -44,7 +44,7 @@ require("packer").startup(function(use)
 	})
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- FZF extension for telescope (faster finding)
 	use({ "kyazdani42/nvim-web-devicons" }) -- Icons
-	use("ggandor/lightspeed.nvim") -- Faster movement in code
+	-- use("ggandor/lightspeed.nvim") -- Faster movement in code
 	use("norcalli/nvim-colorizer.lua") -- Hex colorizer
 	use("folke/trouble.nvim") -- Code problem window
 	-- use("rmagatti/auto-session") -- Auto session manager
