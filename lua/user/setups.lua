@@ -113,3 +113,6 @@ require('org-bullets').setup()
 
 -- Satellite setup
 require('satellite').setup()
+
+-- Buffer line setup
+require("bufferline").setup{}

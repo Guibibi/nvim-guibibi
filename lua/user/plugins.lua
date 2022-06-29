@@ -2,16 +2,16 @@ local fn = vim.fn
 -- Check that packer is installed.
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
-  PACKER_BOOTSTRAP = fn.system {
-    "git",
-    "clone",
-    "--depth",
-    "1",
-    "https://github.com/wbthomason/packer.nvim",
-    install_path,
-  }
-  print "Installing packer, close and reopen Neovim..."
-  vim.cmd [[packadd packer.nvim]]
+	PACKER_BOOTSTRAP = fn.system {
+		"git",
+		"clone",
+		"--depth",
+		"1",
+		"https://github.com/wbthomason/packer.nvim",
+		install_path,
+	}
+	print "Installing packer, close and reopen Neovim..."
+	vim.cmd [[packadd packer.nvim]]
 end
 
 -- Autocommand that reloads neovim whenver we save the plugins.lua
@@ -39,26 +39,27 @@ packer.init {
 
 require("packer").startup(function(use)
 
-  -- Base packages
+	-- Base packages
 	use("ahmedkhalf/project.nvim") -- Project management
 	use("folke/which-key.nvim") -- Show keybindings
 	use("goolord/alpha-nvim") -- Startup dashboard
 	use("lewis6991/impatient.nvim") -- Startup time goes BRRRR
 	use("nvim-treesitter/nvim-treesitter") -- Syntax highlighthing
-	use("romgrk/barbar.nvim") -- Tabline plugin
+	-- use("romgrk/barbar.nvim") -- Tabline plugin
+	use("akinsho/bufferline.nvim") -- Buffer line plugin
 	use("wbthomason/packer.nvim") -- Package manager
 	use({ "kyazdani42/nvim-web-devicons" }) -- Icons
-  use ("nvim-lualine/lualine.nvim") -- Status line
+	use("nvim-lualine/lualine.nvim") -- Status line
 
-  -- LSP Packages
+	-- LSP Packages
 	use("RishabhRD/nvim-lsputils") -- Better LSP actions
 	use("folke/lsp-colors.nvim") -- Provide LSP's color to theme that don't support it
 	use("https://git.sr.ht/~whynothugo/lsp_lines.nvim") -- Show errors in a virtual lines
 	use("neovim/nvim-lspconfig") -- LSP's
 	use("tami5/lspsaga.nvim") -- Provide better actions for LSP's
 	use("williamboman/nvim-lsp-installer") -- Easily install LSP's
-  use("onsails/lspkind.nvim") -- Add icon to completion popup.
-  -- Workflow packages
+	use("onsails/lspkind.nvim") -- Add icon to completion popup.
+	-- Workflow packages
 	use({
 		"nvim-telescope/telescope.nvim", -- Search plugin
 		requires = { { "nvim-lua/plenary.nvim" } },
@@ -68,10 +69,10 @@ require("packer").startup(function(use)
 	use("ludovicchabant/vim-gutentags") -- Automatic tags management
 	use("simrat39/symbols-outline.nvim") -- Show symbol outline with :SymbolsOutline
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- FZF extension for telescope (faster finding)
-	use({"akinsho/toggleterm.nvim", branch="main"}) -- Open a float terminal
+	use({ "akinsho/toggleterm.nvim", branch = "main" }) -- Open a float terminal
 	-- use("ggandor/lightspeed.nvim") -- Faster movement in code
 
-  -- QOL packages
+	-- QOL packages
 	use("romgrk/nvim-treesitter-context") -- Sticky function name
 	use("norcalli/nvim-colorizer.lua") -- Hex colorizer
 	use("karb94/neoscroll.nvim") -- Smooth scrolling
@@ -82,13 +83,13 @@ require("packer").startup(function(use)
 	use("ellisonleao/glow.nvim") -- Markdown previewer
 	use("tpope/vim-surround") -- Surround operator
 	use("gelguy/wilder.nvim") -- Provide completion for command line.
-  use('zane-/cder.nvim') -- Telescope extension to CD into other folder
-  use('lewis6991/satellite.nvim') -- Better scrollbar
-  use { 'anuvyklack/hydra.nvim',
-    requires = 'anuvyklack/keymap-layer.nvim' -- needed only for pink hydras
-}
+	use('zane-/cder.nvim') -- Telescope extension to CD into other folder
+	use('lewis6991/satellite.nvim') -- Better scrollbar
+	use { 'anuvyklack/hydra.nvim',
+		requires = 'anuvyklack/keymap-layer.nvim' -- needed only for pink hydras
+	}
 
-  -- Coding packages
+	-- Coding packages
 	use("tpope/vim-commentary") -- "gc" to comment visual regions/lines
 	use("windwp/nvim-autopairs") -- Autopairs tags
 	use("p00f/nvim-ts-rainbow") -- Rainbow parentheses
@@ -98,19 +99,19 @@ require("packer").startup(function(use)
 	use("vim-test/vim-test") -- Testing extension
 	use("JoosepAlviste/nvim-ts-context-commentstring") -- Make comment work in Vue
 
-  -- Git packages
-	use({"kdheepak/lazygit.nvim", branch="main"}) -- Git UI
+	-- Git packages
+	use({ "kdheepak/lazygit.nvim", branch = "main" }) -- Git UI
 	use("lewis6991/gitsigns.nvim") -- Gitsigns
 	use("ldelossa/gh.nvim") -- Github pull request
 
-  -- Dependencies packages
+	-- Dependencies packages
 	use("RishabhRD/popfix")
-  use("ldelossa/litee.nvim") -- Framework for UIs (Used by gh.nvim)
+	use("ldelossa/litee.nvim") -- Framework for UIs (Used by gh.nvim)
 	use("rcarriga/nvim-notify") -- Notification module
 
-  -- Org mode plugins
-  use('nvim-orgmode/orgmode') -- Add orgmode to neovim.
-  use('akinsho/org-bullets.nvim') -- Add better styling to org.
+	-- Org mode plugins
+	use('nvim-orgmode/orgmode') -- Add orgmode to neovim.
+	use('akinsho/org-bullets.nvim') -- Add better styling to org.
 
 	-- Colorschemes
 	use("EdenEast/nightfox.nvim") -- Another theme
@@ -136,10 +137,9 @@ require("packer").startup(function(use)
 	use("L3MON4D3/LuaSnip") --snippet engine
 	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
 
-  -- Automatically set up your config after cloning packer.nvim
-  -- This needs to be at the end of the plugin list
-  if PACKER_BOOTSTRAP then
-    require("packer").sync()
-  end
+	-- Automatically set up your config after cloning packer.nvim
+	-- This needs to be at the end of the plugin list
+	if PACKER_BOOTSTRAP then
+		require("packer").sync()
+	end
 end)
-

@@ -1,7 +1,7 @@
 -- vim.opt.expandtab = true
 vim.opt.breakindent = true --Enable break indent
 vim.opt.clipboard = "unnamedplus" -- Allow neovim to access the system clipboard.
-vim.opt.cmdheight = 0 -- Set the commandline height
+vim.opt.cmdheight = 1 -- Set the commandline height
 vim.opt.completeopt = {"menuone", "noselect"} -- mostly for cmp
 vim.opt.conceallevel = 0 -- so that `` is visible in markdown files
 vim.opt.cursorline = true -- highlight current line
