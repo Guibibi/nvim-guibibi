@@ -56,4 +56,4 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- Move to previou/next
 keymap('n', '<A-,>', ':BufferLineCyclePrev<CR>', opts)
 keymap('n', '<A-.>', ':BufferLineCycleNext<CR>', opts)
-keymap('n', '<A-c>', ':BufferClose<CR>', opts)
+keymap('n', '<A-c>', ':bdelete<CR>', opts)

@@ -12,8 +12,8 @@ require("nvim-treesitter.configs").setup({
 	},
 	highlight = {
 		enable = true,
-    disable = {'org'}, -- Remov this to use TS highlighter (experimental)
-    additional_vim_regex_highlighting = {'org'}
+		disable = { 'org' }, -- Remov this to use TS highlighter (experimental)
+		additional_vim_regex_highlighting = { 'org' }
 	},
 	rainbow = {
 		enable = true,
@@ -35,26 +35,27 @@ require("neoscroll").setup()
 
 -- Nvim-autopairs setup
 require("nvim-autopairs").setup({
-  check_ts = true,
-  disable_filetype= { "TelescopePrompt" },
+	check_ts = true,
+	disable_filetype = { "TelescopePrompt" },
 })
 
 
 
 -- Lualine setup
 require("lualine").setup({
-  options = {
-    globalstatus = true,
-  }
+	options = {
+		globalstatus = true,
+		theme = 'nord'
+	}
 })
 
 -- Gitsigns setup
 require("gitsigns").setup()
 
 -- Nvim-tree setup
-vim.g.nvim_tree_respect_buf_cwd = 1
 require("nvim-tree").setup({
 	update_cwd = true,
+	respect_buf_cwd = true,
 	update_focused_file = {
 		enable = true,
 		update_cwd = true,
@@ -104,8 +105,8 @@ require('litee.gh').setup()
 
 -- Org mode setup
 require('orgmode').setup({
-  org_agenda_files = '~/org/*',
-  org_default_notes_files = '~/org/*',
+	org_agenda_files = '~/org/*',
+	org_default_notes_files = '~/org/*',
 })
 
 -- Org bullet setup
@@ -115,4 +116,4 @@ require('org-bullets').setup()
 require('satellite').setup()
 
 -- Buffer line setup
-require("bufferline").setup{}
+require("bufferline").setup {}
