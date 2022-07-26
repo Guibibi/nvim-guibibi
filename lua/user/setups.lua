@@ -116,4 +116,9 @@ require('org-bullets').setup()
 require('satellite').setup()
 
 -- Buffer line setup
-require("bufferline").setup {}
+require("bufferline").setup({
+	options = {
+		mode = 'tabs'
+	}
+})
+

@@ -18,7 +18,7 @@ wk.register({
 		["p"] = { "<cmd>Telescope projects<CR>", "Project Finder" },
 		f = {
 			name = "File action",
-			f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format file" },
+			f = { "<cmd>lua vim.lsp.buf.format{async = true}<CR>", "Format file" },
 			w = { "<cmd>set wrap!<CR>", "Toggle word wrap" },
 		},
 		o = {
