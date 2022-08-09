@@ -2,11 +2,10 @@
 
 require("impatient") -- Need to be loaded first!
 
+
 -- Treesitter setup
--- Setup org mode ts grammar
-require('orgmode').setup_ts_grammar()
 require("nvim-treesitter.configs").setup({
-	ensure_installed = "all",
+	auto_install = true,
 	context_commentstring = {
 		enable = true,
 	},
@@ -21,14 +20,17 @@ require("nvim-treesitter.configs").setup({
 	},
 })
 
+-- Setup org mode ts grammar
+require('orgmode').setup_ts_grammar()
+
+--which-key setup
+require("which-key").setup()
+
 -- Trouble setup
 require("trouble").setup()
 
 --nvim-colorizer setup
 require("colorizer").setup()
-
---which-key setup
-require("which-key").setup()
 
 -- Neoscroll setup
 require("neoscroll").setup()
@@ -113,7 +115,7 @@ require('orgmode').setup({
 require('org-bullets').setup()
 
 -- Satellite setup
-require('satellite').setup()
+-- require('satellite').setup()
 
 -- Buffer line setup
 require("bufferline").setup({

@@ -84,7 +84,7 @@ require("packer").startup(function(use)
 	use("tpope/vim-surround") -- Surround operator
 	use("gelguy/wilder.nvim") -- Provide completion for command line.
 	use('zane-/cder.nvim') -- Telescope extension to CD into other folder
-	use('lewis6991/satellite.nvim') -- Better scrollbar
+	-- use('lewis6991/satellite.nvim') -- Better scrollbar
 	use { 'anuvyklack/hydra.nvim',
 		requires = 'anuvyklack/keymap-layer.nvim' -- needed only for pink hydras
 	}
