@@ -4,6 +4,7 @@
         "vim",
         "execute",
         "nvim",
-        "opts"
+        "opts",
+        "options"
     ]
 }

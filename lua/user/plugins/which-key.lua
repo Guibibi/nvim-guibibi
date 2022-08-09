@@ -2,28 +2,30 @@ local wk = require("which-key")
 
 wk.register({
 	["K"] = { "<cmd>Lspsaga hover_doc<CR>", "Hover documentation" },
-	["gs"] = { "<cmd>Lspsaga signature_help<CR>", "Signature help" },
-	["gj"] = { " <cmd>Lspsaga diagnostic_jump_next<cr>", "Goto next diagnostic" },
-	["gk"] = { " <cmd>Lspsaga diagnostic_jump_prev<cr>", "Goto previous diagnostic" },
-	["gD"] = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Show Declaration" },
-	["gd"] = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Show Definition" },
-	["gi"] = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Show Implementation" },
-	["gr"] = { "<cmd>lua vim.lsp.buf.references()<CR>", "Show References" },
+	g = {
+		s = { "<cmd>Lspsaga signature_help<CR>", "Signature help" },
+		j = { " <cmd>Lspsaga diagnostic_jump_next<cr>", "Goto next diagnostic" },
+		k = { " <cmd>Lspsaga diagnostic_jump_prev<cr>", "Goto previous diagnostic" },
+		D = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Show Declaration" },
+		d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Show Definition" },
+		i = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Show Implementation" },
+		r = { "<cmd>lua vim.lsp.buf.references()<CR>", "Show References" },
+	},
 	["<leader>"] = {
 		["g"] = { "<cmd>LazyGit<CR>", "LazyGit" },
 		["?"] = { "Old Files" },
 		["<space>"] = { " Find File" },
 		["p"] = { "<cmd>Telescope projects<CR>", "Project Finder" },
-    f = {
-      name = "File action",
-      f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format file" },
-      w = { "<cmd>set wrap!<CR>", "Toggle word wrap" },
-    },
+		f = {
+			name = "File action",
+			f = { "<cmd>lua vim.lsp.buf.format{async = true}<CR>", "Format file" },
+			w = { "<cmd>set wrap!<CR>", "Toggle word wrap" },
+		},
 		o = {
 			name = "Open",
 			p = { "<cmd>NvimTreeToggle<CR>", "File browser" },
 			t = { "<cmd>TroubleToggle<cr>", "Diagnostics Window" },
-      o = { "<cmd>SymbolsOutline<CR>", "Show Symbols" },
+			o = { "<cmd>SymbolsOutline<CR>", "Show Symbols" },
 		},
 		s = {
 			name = "Search",
@@ -39,12 +41,12 @@ wk.register({
 		},
 		b = {
 			name = "Buffers",
-			k = { "<cmd>BufferClose<CR>", "Kill Buffer" },
-			h = { "<cmd>BufferPrevious<CR>", "Previous Buffer" },
-			l = { "<cmd>BufferNext<CR>", "Next Buffer" },
-			b = { "<cmd>BufferPick<CR>", "Pick Buffer" },
-			c = { "<cmd>BufferCloseAllButCurrent<CR>", "Close Other Buffers" },
-      x = { "<cmd>BufferClose!<CR>", "Force kill buffer"},
+			k = { "<cmd>bdelete<CR>", "Kill Buffer" },
+			h = { "<cmd>BufferLineCyclePrev<CR>", "Previous Buffer" },
+			l = { "<cmd>BufferLineCycleNext<CR>", "Next Buffer" },
+			b = { "<cmd>BufferLinePick<CR>", "Pick Buffer" },
+			c = { "<cmd>BufferLinePickClose<CR>", "Close Other Buffers" },
+			x = { "<cmd>bdelete!<CR>", "Force kill buffer" },
 		},
 		c = {
 			name = "Code",
