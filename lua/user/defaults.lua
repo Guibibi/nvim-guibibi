@@ -29,6 +29,9 @@ vim.opt.termguicolors = true
 vim.opt.undofile = true --Save undo history
 vim.opt.updatetime = 250 --Decrease update time
 vim.opt.wrap = false -- Don't wrap text
+vim.opt.foldmethod="expr" -- Use an expression to determine folding.
+vim.opt.foldexpr="nvim_treesitter#foldexpr()" -- Use treesitter for folding
+vim.opt.foldenable = false -- Disable automatic folding when opening new buffer.
 
 
 
