@@ -120,3 +120,5 @@ require('org-bullets').setup()
 -- Buffer line setup
 require("bufferline").setup()
 
+-- Leap Setup 
+require('leap').set_default_keymaps()
