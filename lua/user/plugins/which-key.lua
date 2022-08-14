@@ -20,6 +20,7 @@ wk.register({
 			name = "File action",
 			f = { "<cmd>lua vim.lsp.buf.format{async = true}<CR>", "Format file" },
 			w = { "<cmd>set wrap!<CR>", "Toggle word wrap" },
+			r = { "<cmd>set rnu!<CR>", "Toggle relative number"},
 		},
 		o = {
 			name = "Open",
@@ -29,7 +30,8 @@ wk.register({
 		},
 		s = {
 			name = "Search",
-			b = { "Fuzzy Find Buffer" },
+			b = { "Buffers" },
+			B = { "Current buffer text" },
 			h = { "Help Tags" },
 			t = { "Tags" },
 			d = { "Grep" },
@@ -41,12 +43,12 @@ wk.register({
 		},
 		b = {
 			name = "Buffers",
-			k = { "<cmd>bdelete<CR>", "Kill Buffer" },
+			d = { "<cmd>lua delete_buffer()<CR>", "Kill Buffer" },
 			h = { "<cmd>BufferLineCyclePrev<CR>", "Previous Buffer" },
 			l = { "<cmd>BufferLineCycleNext<CR>", "Next Buffer" },
 			b = { "<cmd>BufferLinePick<CR>", "Pick Buffer" },
 			c = { "<cmd>BufferLinePickClose<CR>", "Close Other Buffers" },
-			x = { "<cmd>bdelete!<CR>", "Force kill buffer" },
+			-- x = { "<cmd>lua delete_buffer()<CR> n <CR>", "Force kill buffer" },
 		},
 		c = {
 			name = "Code",

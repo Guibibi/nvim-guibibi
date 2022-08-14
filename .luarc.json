@@ -5,6 +5,7 @@
         "execute",
         "nvim",
         "opts",
-        "options"
+        "options",
+        "delete_buffer"
     ]
 }
