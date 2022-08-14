@@ -69,5 +69,11 @@ wk.register({
 			f = { "<cmd>TestFile<CR>", "Test file" },
 			s = { "<cmd>TestSuite<CR>", "Test suite" },
 		},
+		z = {
+			name = "Zen mode",
+			v = {"<cmd>TZNarrow<CR>", "Focus on selected"},
+			w = {"<cmd>TZFocus<CR>", "Focus current window"},
+			z = {"<cmd>TZAtaraxis<CR>", "Zen mode"},
+		}
 	},
 })

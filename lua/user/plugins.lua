@@ -45,11 +45,11 @@ require("packer").startup(function(use)
 	use("goolord/alpha-nvim") -- Startup dashboard
 	use("lewis6991/impatient.nvim") -- Startup time goes BRRRR
 	use("nvim-treesitter/nvim-treesitter") -- Syntax highlighthing
-	-- use("romgrk/barbar.nvim") -- Tabline plugin
 	use("akinsho/bufferline.nvim") -- Buffer line plugin
 	use("wbthomason/packer.nvim") -- Package manager
 	use({ "kyazdani42/nvim-web-devicons" }) -- Icons
 	use("nvim-lualine/lualine.nvim") -- Status line
+	-- use("romgrk/barbar.nvim") -- Tabline plugin
 
 	-- LSP Packages
 	use("RishabhRD/nvim-lsputils") -- Better LSP actions
@@ -59,6 +59,7 @@ require("packer").startup(function(use)
 	use("tami5/lspsaga.nvim") -- Provide better actions for LSP's
 	use("williamboman/nvim-lsp-installer") -- Easily install LSP's
 	use("onsails/lspkind.nvim") -- Add icon to completion popup.
+
 	-- Workflow packages
 	use({
 		"nvim-telescope/telescope.nvim", -- Search plugin
@@ -70,6 +71,8 @@ require("packer").startup(function(use)
 	use("simrat39/symbols-outline.nvim") -- Show symbol outline with :SymbolsOutline
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- FZF extension for telescope (faster finding)
 	use({ "akinsho/toggleterm.nvim", branch = "main" }) -- Open a float terminal
+	use("ggandor/leap.nvim") -- Even faster movement in code
+	use("Pocco81/true-zen.nvim") -- Zen mode
 	-- use("ggandor/lightspeed.nvim") -- Faster movement in code
 
 	-- QOL packages
@@ -118,6 +121,7 @@ require("packer").startup(function(use)
 	use("folke/tokyonight.nvim") -- Adother  theme
 	use("catppuccin/nvim") -- Another theme
 	use("arcticicestudio/nord-vim") -- Theme
+	use("sainnhe/gruvbox-material") --Gruvbox theme
 
 	-- formatter plugins
 	use("jose-elias-alvarez/null-ls.nvim") -- Formatter  plugin
