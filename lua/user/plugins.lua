@@ -122,6 +122,7 @@ require("packer").startup(function(use)
 	use("catppuccin/nvim") -- Another theme
 	use("arcticicestudio/nord-vim") -- Theme
 	use("sainnhe/gruvbox-material") --Gruvbox theme
+	use("Everblush/everblush.nvim") -- Guess what, another theme!
 
 	-- formatter plugins
 	use("jose-elias-alvarez/null-ls.nvim") -- Formatter  plugin
