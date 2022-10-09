@@ -1,24 +1,26 @@
 local mason = require("mason")
-local mason_lspconfig = require("mason-lspconfig")
+local mason_status_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
+if not mason_status_ok then
+  vim.notify("Couldn't load Mason-LSP-Config" .. mason_lspconfig, "error")
+  return
+end
 -- This order is important
 mason.setup()
 mason_lspconfig.setup()
 
+local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
+if not lspconfig_status_ok then
+  vim.notify("Couldn't load LSP-Config" .. lspconfig, "error")
+  return
+end
 
--- Register a handler that will be called for all installed servers.
--- Alternatively, you may also register handlers on specific server instances instead (see example below).
--- lsp_installer.on_server_ready(function(server)
---     local opts = {}
 
---     -- (optional) Customize the options passed to the server
---     -- if server.name == "tsserver" then
---     --     opts.root_dir = function() ... end
---     -- end
-
---     -- This setup() function is exactly the same as lspconfig's setup function.
---     -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
---     server:setup(opts)
--- end)
+mason_lspconfig.setup_handlers({
+	function(server_name)
+		lspconfig[server_name].setup {
+		}
+	end
+		})
 
 -- Setup for nvim-lsputils
 if vim.fn.has('nvim-0.5.1') == 1 then
