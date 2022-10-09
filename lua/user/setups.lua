@@ -47,7 +47,7 @@ require("nvim-autopairs").setup({
 require("lualine").setup({
 	options = {
 		globalstatus = true,
-		theme = 'nord'
+		theme = 'gruvbox-material'
 	}
 })
 
