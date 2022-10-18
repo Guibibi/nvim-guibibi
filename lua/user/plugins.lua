@@ -57,7 +57,8 @@ require("packer").startup(function(use)
 	use("https://git.sr.ht/~whynothugo/lsp_lines.nvim") -- Show errors in a virtual lines
 	use("neovim/nvim-lspconfig") -- LSP's
 	use("tami5/lspsaga.nvim") -- Provide better actions for LSP's
-	use("williamboman/nvim-lsp-installer") -- Easily install LSP's
+	use("williamboman/mason.nvim") -- Easily install LSP's
+	use("williamboman/mason-lspconfig.nvim") -- Easily link mason to LspConfig
 	use("onsails/lspkind.nvim") -- Add icon to completion popup.
 
 	-- Workflow packages
