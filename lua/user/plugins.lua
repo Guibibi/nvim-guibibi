@@ -49,7 +49,6 @@ require("packer").startup(function(use)
 	use("wbthomason/packer.nvim") -- Package manager
 	use({ "kyazdani42/nvim-web-devicons" }) -- Icons
 	use("nvim-lualine/lualine.nvim") -- Status line
-	-- use("romgrk/barbar.nvim") -- Tabline plugin
 
 	-- LSP Packages
 	use("RishabhRD/nvim-lsputils") -- Better LSP actions
@@ -74,7 +73,7 @@ require("packer").startup(function(use)
 	use({ "akinsho/toggleterm.nvim", branch = "main" }) -- Open a float terminal
 	use("ggandor/leap.nvim") -- Even faster movement in code
 	use("Pocco81/true-zen.nvim") -- Zen mode
-	-- use("ggandor/lightspeed.nvim") -- Faster movement in code
+	use("zbirenbaum/copilot.lua") -- Copilot integration
 
 	-- QOL packages
 	use("romgrk/nvim-treesitter-context") -- Sticky function name
@@ -88,7 +87,7 @@ require("packer").startup(function(use)
 	use("tpope/vim-surround") -- Surround operator
 	use("gelguy/wilder.nvim") -- Provide completion for command line.
 	use('zane-/cder.nvim') -- Telescope extension to CD into other folder
-	-- use('lewis6991/satellite.nvim') -- Better scrollbar
+	use('mvllow/modes.nvim') -- Visual line decorations based on current mode.
 	use { 'anuvyklack/hydra.nvim',
 		requires = 'anuvyklack/keymap-layer.nvim' -- needed only for pink hydras
 	}

@@ -122,3 +122,9 @@ require("bufferline").setup()
 
 -- Leap Setup 
 require('leap').set_default_keymaps()
+
+-- Modes setup
+require('modes').setup()
+
+-- Copilot setup
+require('copilot').setup()
