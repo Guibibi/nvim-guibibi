@@ -129,6 +129,11 @@ _G.packer_plugins = {
     path = "/home/guibibi/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["copilot.lua"] = {
+    loaded = true,
+    path = "/home/guibibi/.local/share/nvim/site/pack/packer/start/copilot.lua",
+    url = "https://github.com/zbirenbaum/copilot.lua"
+  },
   ["everblush.nvim"] = {
     loaded = true,
     path = "/home/guibibi/.local/share/nvim/site/pack/packer/start/everblush.nvim",
@@ -233,6 +238,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/guibibi/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["modes.nvim"] = {
+    loaded = true,
+    path = "/home/guibibi/.local/share/nvim/site/pack/packer/start/modes.nvim",
+    url = "https://github.com/mvllow/modes.nvim"
   },
   neogen = {
     loaded = true,
@@ -363,6 +373,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/guibibi/.local/share/nvim/site/pack/packer/start/registers.nvim",
     url = "https://github.com/tversteeg/registers.nvim"
+  },
+  spaceduck = {
+    loaded = true,
+    path = "/home/guibibi/.local/share/nvim/site/pack/packer/start/spaceduck",
+    url = "https://github.com/pineapplegiant/spaceduck"
   },
   ["symbols-outline.nvim"] = {
     loaded = true,
