@@ -11,8 +11,6 @@ require("nvim-treesitter.configs").setup({
 	},
 	highlight = {
 		enable = true,
-		disable = { 'org' }, -- Remov this to use TS highlighter (experimental)
-		additional_vim_regex_highlighting = { 'org' }
 	},
 	rainbow = {
 		enable = true,
@@ -47,7 +45,7 @@ require("nvim-autopairs").setup({
 require("lualine").setup({
 	options = {
 		globalstatus = true,
-		theme = 'gruvbox-material'
+		theme = 'spaceduck'
 	}
 })
 
