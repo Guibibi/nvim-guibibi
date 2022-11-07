@@ -1,8 +1,9 @@
 -- Setup telescope
 local telescope = require'telescope'
+
 telescope.setup({
   defaults = {
-    file_ignore_patterns = {"ios", "node_modules", "android", "*.test.js.snap"}
+    file_ignore_patterns = {"ios", "node_modules", "android", "*.test.js.snap", "yarn.lock", "package.lock"}
   }
 })
 

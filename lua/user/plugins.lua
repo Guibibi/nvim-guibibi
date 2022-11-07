@@ -49,11 +49,12 @@ require("packer").startup(function(use)
 	use("wbthomason/packer.nvim") -- Package manager
 	use({ "kyazdani42/nvim-web-devicons" }) -- Icons
 	use("nvim-lualine/lualine.nvim") -- Status line
+	use("folke/noice.nvim") -- Huge UI upgrade
+	use("MunifTanjim/nui.nvim") -- UI library (for noice.nvim)
 
 	-- LSP Packages
 	use("RishabhRD/nvim-lsputils") -- Better LSP actions
 	use("folke/lsp-colors.nvim") -- Provide LSP's color to theme that don't support it
-	use("https://git.sr.ht/~whynothugo/lsp_lines.nvim") -- Show errors in a virtual lines
 	use("neovim/nvim-lspconfig") -- LSP's
 	use("tami5/lspsaga.nvim") -- Provide better actions for LSP's
 	use("williamboman/mason.nvim") -- Easily install LSP's

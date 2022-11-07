@@ -2,7 +2,6 @@
 
 require("impatient") -- Need to be loaded first!
 
-
 -- Treesitter setup
 require("nvim-treesitter.configs").setup({
 	auto_install = true,
@@ -19,6 +18,9 @@ require("nvim-treesitter.configs").setup({
 		extended_mode = true,
 	},
 })
+
+-- Setup Noice
+require('noice').setup()
 
 -- Setup org mode ts grammar
 require('orgmode').setup_ts_grammar()
