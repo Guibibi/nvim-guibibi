@@ -113,10 +113,6 @@ require("packer").startup(function(use)
 	use("ldelossa/litee.nvim") -- Framework for UIs (Used by gh.nvim)
 	use("rcarriga/nvim-notify") -- Notification module
 
-	-- Org mode plugins
-	use('nvim-orgmode/orgmode') -- Add orgmode to neovim.
-	use('akinsho/org-bullets.nvim') -- Add better styling to org.
-
 	-- Colorschemes
 	use("EdenEast/nightfox.nvim") -- Another theme
 	use("folke/tokyonight.nvim") -- Adother  theme

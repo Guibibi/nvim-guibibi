@@ -10,8 +10,6 @@ require("nvim-treesitter.configs").setup({
 	},
 	highlight = {
 		enable = true,
-		disable = { 'org' }, -- Remov this to use TS highlighter (experimental)
-		additional_vim_regex_highlighting = { 'org' }
 	},
 	rainbow = {
 		enable = true,
@@ -19,11 +17,8 @@ require("nvim-treesitter.configs").setup({
 	},
 })
 
--- Setup Noice
-require('noice').setup()
-
--- Setup org mode ts grammar
-require('orgmode').setup_ts_grammar()
+-- -- Setup Noice
+-- require('noice').setup()
 
 --which-key setup
 require("which-key").setup()
@@ -106,15 +101,6 @@ require('litee.lib').setup()
 
 -- Litee github PR setup
 require('litee.gh').setup()
-
--- Org mode setup
-require('orgmode').setup({
-	org_agenda_files = '~/org/*',
-	org_default_notes_files = '~/org/*',
-})
-
--- Org bullet setup
-require('org-bullets').setup()
 
 -- Satellite setup
 -- require('satellite').setup()
