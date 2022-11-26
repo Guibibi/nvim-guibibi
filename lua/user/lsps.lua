@@ -15,12 +15,10 @@ if not lspconfig_status_ok then
 end
 
 
-mason_lspconfig.setup_handlers({
-	function(server_name)
-		lspconfig[server_name].setup {
-		}
-	end
-		})
+lspconfig.volar.setup{
+ filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
+}
+
 
 -- Setup for nvim-lsputils
 if vim.fn.has('nvim-0.5.1') == 1 then

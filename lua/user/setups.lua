@@ -2,7 +2,6 @@
 
 require("impatient") -- Need to be loaded first!
 
-
 -- Treesitter setup
 require("nvim-treesitter.configs").setup({
 	auto_install = true,
@@ -18,8 +17,8 @@ require("nvim-treesitter.configs").setup({
 	},
 })
 
--- Setup org mode ts grammar
-require('orgmode').setup_ts_grammar()
+-- -- Setup Noice
+-- require('noice').setup()
 
 --which-key setup
 require("which-key").setup()
@@ -102,15 +101,6 @@ require('litee.lib').setup()
 
 -- Litee github PR setup
 require('litee.gh').setup()
-
--- Org mode setup
-require('orgmode').setup({
-	org_agenda_files = '~/org/*',
-	org_default_notes_files = '~/org/*',
-})
-
--- Org bullet setup
-require('org-bullets').setup()
 
 -- Satellite setup
 -- require('satellite').setup()

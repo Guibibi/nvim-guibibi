@@ -49,6 +49,8 @@ require("packer").startup(function(use)
 	use("wbthomason/packer.nvim") -- Package manager
 	use({ "kyazdani42/nvim-web-devicons" }) -- Icons
 	use("nvim-lualine/lualine.nvim") -- Status line
+	use("folke/noice.nvim") -- Huge UI upgrade
+	use("MunifTanjim/nui.nvim") -- UI library (for noice.nvim)
 
 	-- LSP Packages
 	use("RishabhRD/nvim-lsputils") -- Better LSP actions
@@ -110,10 +112,6 @@ require("packer").startup(function(use)
 	use("RishabhRD/popfix")
 	use("ldelossa/litee.nvim") -- Framework for UIs (Used by gh.nvim)
 	use("rcarriga/nvim-notify") -- Notification module
-
-	-- Org mode plugins
-	use('nvim-orgmode/orgmode') -- Add orgmode to neovim.
-	use('akinsho/org-bullets.nvim') -- Add better styling to org.
 
 	-- Colorschemes
 	use("EdenEast/nightfox.nvim") -- Another theme
