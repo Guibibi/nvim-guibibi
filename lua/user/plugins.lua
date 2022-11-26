@@ -74,7 +74,6 @@ require("packer").startup(function(use)
 	use({ "akinsho/toggleterm.nvim", branch = "main" }) -- Open a float terminal
 	use("ggandor/leap.nvim") -- Even faster movement in code
 	use("Pocco81/true-zen.nvim") -- Zen mode
-	use("zbirenbaum/copilot.lua") -- Copilot integration
 
 	-- QOL packages
 	use("romgrk/nvim-treesitter-context") -- Sticky function name
@@ -88,21 +87,22 @@ require("packer").startup(function(use)
 	use("tpope/vim-surround") -- Surround operator
 	use("gelguy/wilder.nvim") -- Provide completion for command line.
 	use('zane-/cder.nvim') -- Telescope extension to CD into other folder
-	use('mvllow/modes.nvim') -- Visual line decorations based on current mode.
+	-- use('mvllow/modes.nvim') -- Visual line decorations based on current mode.
 	use { 'anuvyklack/hydra.nvim',
 		requires = 'anuvyklack/keymap-layer.nvim' -- needed only for pink hydras
 	}
 
 	-- Coding packages
+	use("zbirenbaum/copilot.lua") -- Copilot integration
 	use("tpope/vim-commentary") -- "gc" to comment visual regions/lines
-	use("windwp/nvim-autopairs") -- Autopairs
-	use("windwp/nvim-ts-autotag") -- Auto close tags
+	use("windwp/nvim-autopairs") -- Autopairs {()}
+	use("windwp/nvim-ts-autotag") -- Autotag <h1> </h1>
 	use("p00f/nvim-ts-rainbow") -- Rainbow parentheses
 	use("lukas-reineke/indent-blankline.nvim") -- Indent guidelines
-	-- use("kkoomen/vim-doge") -- Documentation generator
 	use("danymat/neogen") -- Documentation generator
 	use("vim-test/vim-test") -- Testing extension
 	use("JoosepAlviste/nvim-ts-context-commentstring") -- Make comment work in Vue
+	use("simrat39/rust-tools.nvim") -- Better  tools for rust
 
 	-- Git packages
 	use({ "kdheepak/lazygit.nvim", branch = "main" }) -- Git UI
