@@ -209,11 +209,6 @@ _G.packer_plugins = {
     path = "/home/guibibi/.local/share/nvim/site/pack/packer/start/lsp-colors.nvim",
     url = "https://github.com/folke/lsp-colors.nvim"
   },
-  ["lsp_lines.nvim"] = {
-    loaded = true,
-    path = "/home/guibibi/.local/share/nvim/site/pack/packer/start/lsp_lines.nvim",
-    url = "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
-  },
   ["lspkind.nvim"] = {
     loaded = true,
     path = "/home/guibibi/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
@@ -238,11 +233,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/guibibi/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
-  },
-  ["modes.nvim"] = {
-    loaded = true,
-    path = "/home/guibibi/.local/share/nvim/site/pack/packer/start/modes.nvim",
-    url = "https://github.com/mvllow/modes.nvim"
   },
   neogen = {
     loaded = true,
@@ -373,6 +363,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/guibibi/.local/share/nvim/site/pack/packer/start/registers.nvim",
     url = "https://github.com/tversteeg/registers.nvim"
+  },
+  ["rust-tools.nvim"] = {
+    loaded = true,
+    path = "/home/guibibi/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
+    url = "https://github.com/simrat39/rust-tools.nvim"
   },
   spaceduck = {
     loaded = true,

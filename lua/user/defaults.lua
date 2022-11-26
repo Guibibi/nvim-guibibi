@@ -16,6 +16,9 @@ vim.opt.mouse = "a" -- Enable mouse mode
 vim.opt.number = true -- Show lines number
 vim.opt.pumheight = 10 -- popup menu height
 vim.opt.shiftwidth = 2 -- number of spaces inserted for each indentation
+vim.opt.autoindent = true
+vim.opt.tabstop = 2 -- insert 2 spaces for a tab
+vim.o.expandtab = false -- Disable making tabs
 vim.opt.showmode = false -- Show/hide current mode
 vim.opt.showtabline = 0 -- always show tab
 vim.opt.signcolumn = "yes"
@@ -24,7 +27,6 @@ vim.opt.smartindent = true -- make indenting smarter again
 vim.opt.splitbelow = true -- force split to go below current window
 vim.opt.splitright = true -- force split to go right of the current window
 vim.opt.swapfile = false -- create a swapfile
-vim.opt.tabstop = 2 -- insert 2 spaces for a tab
 vim.opt.termguicolors = true
 vim.opt.undofile = true --Save undo history
 vim.opt.updatetime = 250 --Decrease update time
@@ -32,6 +34,8 @@ vim.opt.wrap = false -- Don't wrap text
 vim.opt.foldmethod="expr" -- Use an expression to determine folding.
 vim.opt.foldexpr="nvim_treesitter#foldexpr()" -- Use treesitter for folding
 vim.opt.foldenable = false -- Disable automatic folding when opening new buffer.
+vim.opt.cmdheight = 0 -- Hide the cmd line at the bottom
+vim.opt.laststatus = 3
 
 
 
