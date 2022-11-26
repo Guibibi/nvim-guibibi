@@ -139,11 +139,6 @@ _G.packer_plugins = {
     path = "C:\\Users\\gbedard\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\everblush.nvim",
     url = "https://github.com/Everblush/everblush.nvim"
   },
-  ["format-installer.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\gbedard\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\format-installer.nvim",
-    url = "https://github.com/PlatyPew/format-installer.nvim"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "C:\\Users\\gbedard\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\friendly-snippets",
@@ -228,6 +223,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\gbedard\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mason-lspconfig.nvim",
     url = "https://github.com/williamboman/mason-lspconfig.nvim"
+  },
+  ["mason-null-ls.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\gbedard\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mason-null-ls.nvim",
+    url = "https://github.com/jayp0521/mason-null-ls.nvim"
   },
   ["mason.nvim"] = {
     loaded = true,
@@ -329,6 +329,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\gbedard\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-treesitter-context",
     url = "https://github.com/romgrk/nvim-treesitter-context"
   },
+  ["nvim-ts-autotag"] = {
+    loaded = true,
+    path = "C:\\Users\\gbedard\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-ts-autotag",
+    url = "https://github.com/windwp/nvim-ts-autotag"
+  },
   ["nvim-ts-context-commentstring"] = {
     loaded = true,
     path = "C:\\Users\\gbedard\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-ts-context-commentstring",
@@ -343,16 +348,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\gbedard\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
-  },
-  ["org-bullets.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\gbedard\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\org-bullets.nvim",
-    url = "https://github.com/akinsho/org-bullets.nvim"
-  },
-  orgmode = {
-    loaded = true,
-    path = "C:\\Users\\gbedard\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\orgmode",
-    url = "https://github.com/nvim-orgmode/orgmode"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -378,6 +373,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\gbedard\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\registers.nvim",
     url = "https://github.com/tversteeg/registers.nvim"
+  },
+  spaceduck = {
+    loaded = true,
+    path = "C:\\Users\\gbedard\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\spaceduck",
+    url = "https://github.com/pineapplegiant/spaceduck"
   },
   ["symbols-outline.nvim"] = {
     loaded = true,
