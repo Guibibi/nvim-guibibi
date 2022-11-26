@@ -5,6 +5,9 @@ require("impatient") -- Need to be loaded first!
 -- Treesitter setup
 require("nvim-treesitter.configs").setup({
 	auto_install = true,
+	autotag = {
+		enable = true
+	},
 	context_commentstring = {
 		enable = true,
 	},
@@ -18,7 +21,7 @@ require("nvim-treesitter.configs").setup({
 })
 
 -- -- Setup Noice
--- require('noice').setup()
+require('noice').setup()
 
 --which-key setup
 require("which-key").setup()

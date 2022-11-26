@@ -95,7 +95,8 @@ require("packer").startup(function(use)
 	-- Coding packages
 	use("zbirenbaum/copilot.lua") -- Copilot integration
 	use("tpope/vim-commentary") -- "gc" to comment visual regions/lines
-	use("windwp/nvim-autopairs") -- Autopairs tags
+	use("windwp/nvim-autopairs") -- Autopairs {()}
+	use("windwp/nvim-ts-autotag") -- Autotag <h1> </h1>
 	use("p00f/nvim-ts-rainbow") -- Rainbow parentheses
 	use("lukas-reineke/indent-blankline.nvim") -- Indent guidelines
 	use("danymat/neogen") -- Documentation generator
