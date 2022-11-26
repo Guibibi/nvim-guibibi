@@ -4,9 +4,17 @@ if not mason_status_ok then
   vim.notify("Couldn't load Mason-LSP-Config" .. mason_lspconfig, "error")
   return
 end
+
+local masonNullLs = require("mason-null-ls")
 -- This order is important
 mason.setup()
 mason_lspconfig.setup()
+masonNullLs.setup({
+    automatic_setup = true,
+})
+masonNullLs.setup_handlers()
+
+require('null-ls').setup()
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status_ok then
@@ -30,6 +38,11 @@ lspconfig.tailwindcss.setup({
 		},
 	},
 })
+lspconfig.tailwindcss.setup{
+	-- root_dir = lspconfig.util.root_pattern("package.json"),
+	root_dir = lspconfig.util.root_pattern('tailwind.config.js','tailwind.config.cjs', 'tailwind.config.ts', 'postcss.config.js', 'postcss.config.cjs', 'postcss.config.ts', 'package.json', 'node_modules', '.git')
+}
+
 
 -- Setup for nvim-lsputils
 if vim.fn.has('nvim-0.5.1') == 1 then

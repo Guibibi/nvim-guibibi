@@ -87,6 +87,5 @@ cmp.setup({
     { name = 'path'},
     { name = 'emoji'},
     { name = 'copilot'},
-    { name = 'orgmode'},
   })
 })

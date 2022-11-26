@@ -124,8 +124,8 @@ require("packer").startup(function(use)
 	use("pineapplegiant/spaceduck") -- New main theme?
 
 	-- formatter plugins
-	use("jose-elias-alvarez/null-ls.nvim") -- Formatter  plugin
-	use("PlatyPew/format-installer.nvim") -- Formatter plugin installer
+	use("jose-elias-alvarez/null-ls.nvim") -- Formatter/linter plugin
+	use("jayp0521/mason-null-ls.nvim") -- Mason bridge for null-ls
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
