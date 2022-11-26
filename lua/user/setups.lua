@@ -62,6 +62,9 @@ require("nvim-tree").setup({
 		enable = true,
 		update_cwd = true,
 	},
+	view = {
+		side = "right"
+	},
 })
 
 -- Lsp saga setup

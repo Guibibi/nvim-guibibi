@@ -19,6 +19,17 @@ lspconfig.volar.setup{
  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
 }
 
+lspconfig.tailwindcss.setup({
+ settings = {
+		tailwindCSS = {
+			experimental = {
+				classRegex = {
+									"tailwind\\('([^)]*)\\')", "'([^']*)'"
+						},
+			},
+		},
+	},
+})
 
 -- Setup for nvim-lsputils
 if vim.fn.has('nvim-0.5.1') == 1 then
