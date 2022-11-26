@@ -95,7 +95,8 @@ require("packer").startup(function(use)
 
 	-- Coding packages
 	use("tpope/vim-commentary") -- "gc" to comment visual regions/lines
-	use("windwp/nvim-autopairs") -- Autopairs tags
+	use("windwp/nvim-autopairs") -- Autopairs
+	use("windwp/nvim-ts-autotag") -- Auto close tags
 	use("p00f/nvim-ts-rainbow") -- Rainbow parentheses
 	use("lukas-reineke/indent-blankline.nvim") -- Indent guidelines
 	-- use("kkoomen/vim-doge") -- Documentation generator
@@ -123,8 +124,8 @@ require("packer").startup(function(use)
 	use("pineapplegiant/spaceduck") -- New main theme?
 
 	-- formatter plugins
-	use("jose-elias-alvarez/null-ls.nvim") -- Formatter  plugin
-	use("PlatyPew/format-installer.nvim") -- Formatter plugin installer
+	use("jose-elias-alvarez/null-ls.nvim") -- Formatter/linter plugin
+	use("jayp0521/mason-null-ls.nvim") -- Mason bridge for null-ls
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin

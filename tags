@@ -1,0 +1,27 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+["<S-Tab>"] 	.\lua\user\plugins\cmp.lua	/^    ["<S-Tab>"] = cmp.mapping(function(fallback)$/;"	f
+["<Tab>"] 	.\lua\user\plugins\cmp.lua	/^    ["<Tab>"] = cmp.mapping(function(fallback)$/;"	f
+delete_buffer	.\lua\user\functions.lua	/^function delete_buffer()$/;"	f
+expand 	.\lua\user\plugins\cmp.lua	/^    expand = function(args)$/;"	f
+footer	.\lua\user\plugins\alpha.lua	/^local function footer()$/;"	f
+if vim.api.nvim_call_function('has', {'nvim-0.5'}) ~	.\plugin\packer_compiled.lua	/^if vim.api.nvim_call_function('has', {'nvim-0.5'}) ~= 1 then$/;"	f
+local check_backspace 	.\lua\user\plugins\cmp.lua	/^local check_backspace = function()$/;"	f
+local no_errors, error_msg 	.\plugin\packer_compiled.lua	/^local no_errors, error_msg = pcall(function()$/;"	f
+open_fn 	.\lua\user\plugins.lua	/^		open_fn = function()$/;"	f
+save_profiles	.\plugin\packer_compiled.lua	/^local function save_profiles(threshold)$/;"	f
+time 	.\plugin\packer_compiled.lua	/^  time = function(chunk, start) end$/;"	f
+time 	.\plugin\packer_compiled.lua	/^  time = function(chunk, start)$/;"	f
+try_loadstring	.\plugin\packer_compiled.lua	/^local function try_loadstring(s, component, name)$/;"	f
+vim.lsp.handlers['textDocument/codeAction'] 	.\lua\user\lsps.lua	/^    vim.lsp.handlers['textDocument\/codeAction'] = function(_, _, actions)$/;"	f
+vim.lsp.handlers['textDocument/declaration'] 	.\lua\user\lsps.lua	/^    vim.lsp.handlers['textDocument\/declaration'] = function(_, method, result)$/;"	f
+vim.lsp.handlers['textDocument/definition'] 	.\lua\user\lsps.lua	/^    vim.lsp.handlers['textDocument\/definition'] = function(_, method, result)$/;"	f
+vim.lsp.handlers['textDocument/documentSymbol'] 	.\lua\user\lsps.lua	/^    vim.lsp.handlers['textDocument\/documentSymbol'] = function(_, _, result, _, bufn)$/;"	f
+vim.lsp.handlers['textDocument/implementation'] 	.\lua\user\lsps.lua	/^    vim.lsp.handlers['textDocument\/implementation'] = function(_, method, result)$/;"	f
+vim.lsp.handlers['textDocument/references'] 	.\lua\user\lsps.lua	/^    vim.lsp.handlers['textDocument\/references'] = function(_, _, result)$/;"	f
+vim.lsp.handlers['textDocument/symbol'] 	.\lua\user\lsps.lua	/^    vim.lsp.handlers['textDocument\/symbol'] = function(_, _, result, _, bufn)$/;"	f
+vim.lsp.handlers['textDocument/typeDefinition'] 	.\lua\user\lsps.lua	/^    vim.lsp.handlers['textDocument\/typeDefinition'] = function(_, method, result)$/;"	f
